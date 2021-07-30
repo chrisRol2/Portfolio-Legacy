@@ -1,0 +1,15 @@
+#project__div{
+    height: calc(75vh - 20px);
+    width: calc(100% - (40px * 2) - 20px * 2);
+    /* background: #dde; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 30px;
+    border: 4px solid #121111;
+}
+
+.project_N{
+
+}

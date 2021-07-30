@@ -1,0 +1,12 @@
+.title__component{
+    height:130px;
+    width: calc(100% - 15px * 2);
+    font-size: 30px;
+    background: #121111;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    border-radius: 30px;
+}
