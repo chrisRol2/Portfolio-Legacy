@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Project from './Project'
 import './styles/Projects.css'
-
+import Works from '../API/works.json'
 export class Projects extends Component {
     render() {
         return (
@@ -10,12 +10,9 @@ export class Projects extends Component {
                     <h2>My Works</h2>
                 </div>
                 <div id="project__div">
-                    
-                    <Project name="Rolgus ToolBox"/>
-                    <Project name="Discord Bot"/>
-                    <Project name= "Chris Rol"/>
-                    <Project name="lot-tido"/>
-                    
+                    {Works.map(work => {
+                        return <Project name={work.name} key={work.id} />
+                    })}                    
                 </div>
             </div>
         )

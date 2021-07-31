@@ -1,16 +1,27 @@
 
 .project_N{
     background: #E1E0FF;
-    min-width: 40%;
-    height: 210px;
+    min-width: calc(40% + 20px * 2);
+    height: calc(210px + 20px * 2);
     margin: 20px;
-    padding: 40px;
+    /* padding: 40px; */
     border-radius: 30px;
     border: 4px solid #121111;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    /* background: url(../../images/fotin.png); */
+
+    overflow: auto;
+
     
+}
+.project_N > *{
+    transition: all 0.5s;
+    border-end-end-radius: 30px;
+    backdrop-filter: blur(8px);
+    
+
 }
 
 .project_N-image{ 
@@ -18,7 +29,9 @@
 }
 
 .project_N-name{ 
-    flex-grow: 1;    
+    flex-grow: 1;   
+    
+
 }
 
 .project_N-link{   
@@ -34,15 +47,13 @@
 
 }
 
-.project_N-hover{
-    
-    min-width: 40%;
-    height: 210px;
-    margin: 20px;
-    padding: 40px;
-    border-radius: 30px;
-   
+
+.project_N-hover{ 
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    background:#807f9160;
 }
