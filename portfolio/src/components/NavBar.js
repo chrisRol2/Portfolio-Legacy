@@ -20,7 +20,7 @@ export class NavBar extends Component {
                 <h2 name="About" className={this.state.About}
                     onClick={this.onClick}>About</h2>
                 <h2 name="Projects" className={this.state.Projects}
-                    onClick={this.onClick}>Projects</h2>
+                    onClick={this.onClick}>Works</h2>
                 <h2 name="cv" className={this.state.cv}
                     onClick={this.onClick}>CV</h2>
                 <h2 name="Contact" className={this.state.Contact}
