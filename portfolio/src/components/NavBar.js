@@ -3,7 +3,7 @@ import './styles/NavBar.css'
 import './styles/animate.min.css';
 export class NavBar extends Component {
     state = {
-        classAnimate: ''
+        
     }
     onClick = (e) => {
         this.setState({
