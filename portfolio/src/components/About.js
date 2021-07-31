@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './styles/About.css'
 import profile from '../images/images.png'
+import MeAbout from '../API/AboutMe.json'
 
 export class About extends Component {
     render() {
@@ -18,7 +19,7 @@ export class About extends Component {
                     <div id="aboutMe__about-container">
                         <h2>FrontEnd Developer</h2><br/>
                         <h2>Christopher Roldan Sanchez</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta fugiat recusandae, nostrum, reiciendis eius animi natus dolorem harum nam facere nobis nihil dolorum porro facilis, necessitatibus sed sit illum suscipit delectus. Vero quos asperiores voluptatem quas, facilis te.</p>
+                        <p>{ MeAbout.description}</p>
                     </div>
 
                 </div>
