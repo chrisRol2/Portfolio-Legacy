@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-*{
-    font-family: 'Staatliches', cursive;
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+html * {
+  font-family: "Staatliches", cursive;
+  scroll-behavior: smooth;
+  scroll-margin-top: 50px;
+}
 
+[id] {
+  scroll-margin-top: 150px;
 }
