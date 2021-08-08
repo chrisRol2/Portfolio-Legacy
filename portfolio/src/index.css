@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
-html * {
+html {
   font-family: "Staatliches", cursive;
   scroll-behavior: smooth;
   scroll-margin-top: 50px;
