@@ -1,3 +1,5 @@
+
+
 #navbar {
   height: 120px;
   width: calc(100% - 15px * 2);
@@ -5,8 +7,8 @@
   margin-bottom: 30px;
   border-radius: 30px;
   position: sticky;
-  background-color: #fbf8ee;
   top: 15px;
+  background-color: #fbf8ee;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -21,11 +23,23 @@
   text-decoration: none;
   font-size: 30px;
   color: #121111;
-  font-weight: 900;
+  font-weight: 900; 
+  padding: 1% 2%;
+  border: 2px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-radius: 20px;
+  transition: border-bottom , border-right, border .2s;
+
+}
+.active{
+  border: 2px solid #121111!important;
+  border-bottom: 4px solid #121111!important;
+  border-right: 4px solid #121111!important;
+  border-radius: 20px;
 }
 
-#navbar > a:visited {
-}
+
 
 @media screen and (max-width: 450) {
   #navbar {

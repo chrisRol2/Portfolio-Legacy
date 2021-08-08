@@ -5,8 +5,8 @@ import Works from "../API/works.json";
 export class Projects extends Component {
   render() {
     return (
-      <div>
-        <div id="projects" className="title__component">
+      <div id="projects" scrollspy="true">
+        <div className="title__component" id="project__title">
           <h2>My Works</h2>
         </div>
         <div id="project__div">
