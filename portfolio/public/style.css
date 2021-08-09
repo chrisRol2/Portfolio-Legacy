@@ -7,23 +7,23 @@
 body {
   background-color: #d0d3ec;
 }
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 10px;
   height: 8px;
   border-radius: 8px;
 }
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   background: transparent;
   border-radius: 4px;
 }
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background: rgb(131, 131, 131);
   border-radius: 4px;
   border: 1px solid #000;
 }
-body::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
   background: #757575;
 }
-body::-webkit-scrollbar-thumb:active {
+*::-webkit-scrollbar-thumb:active {
   background-color: #3f3f3f;
 }
