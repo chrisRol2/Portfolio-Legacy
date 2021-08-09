@@ -8,3 +8,13 @@ html {
 [id] {
   scroll-margin-top: 150px;
 }
+* {
+  font-family: "Staatliches", cursive;
+}
+
+:root {
+  --button-acent: #ffbb00;
+  --acent: #fbf8ee;
+  --blue-acent: #d0d3ec;
+  --black: #121111;
+}
