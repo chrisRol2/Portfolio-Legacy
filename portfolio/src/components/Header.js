@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import MediaContext from "../context/MediaQueryContext";
+import NavBar from "./NavBar";
 import "./styles/Header.css";
-
 
 const initialHover = {
   color: "#d0d3ec",
@@ -20,7 +20,7 @@ const nameLong = {
 };
 const Header = () => {
   const { mediaMatch } = useContext(MediaContext);
-  
+
   const [isHovered, setIsHovered] = useState(false);
   const [name, setName] = useState(nameLong.small);
   const [titleName, setTitleName] = useState(null);
@@ -28,10 +28,9 @@ const Header = () => {
   // animate__animated animate__fadeInDown
 
   useEffect(() => {
-    setName(
-      matchMedia("(min-width: 518px)").matches ? nameLong.large : nameLong.small
-    );
-  }, []);
+    setName(mediaMatch ? nameLong.large : nameLong.small);
+  }, [mediaMatch]);
+
   useEffect(() => {
     setTitleName(name);
   }, [name]);
@@ -53,21 +52,24 @@ const Header = () => {
   };
 
   return (
-    <div id="header" scrollspy="false">
-      <div className="animate__animated animate__zoomInDown">
-        <h2>Hello, i am</h2>
-        <div>
-          <h1
-            style={animationClass}
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHover}
-          >
-            {titleName}
-          </h1>
+    <>
+      <div id="header" scrollspy="false">
+        <div className="animate__animated animate__zoomInDown">
+          <h2>Hello, i am</h2>
+          <div>
+            <h1
+              style={animationClass}
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
+            >
+              {titleName}
+            </h1>
+          </div>
+          {/* <h2>FrontEnd Developer</h2> */}
         </div>
-        {/* <h2>FrontEnd Developer</h2> */}
       </div>
-    </div>
+      {mediaMatch && <NavBar/>}
+    </>
   );
 };
 
