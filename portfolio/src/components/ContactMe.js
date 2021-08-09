@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./styles/ContactMe.css";
-
 const ContactMe = () => {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [text, setText] = useState(null);
   let emailExpression =
-    /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
-
+  /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\]\.,;:\s@"]{2,63}$/i;
+  
   const post = () => {
+    //TODO: agregar control de que no sean null y tengan algo importante
     if (emailExpression.test(email)) {
       console.log("enviando");
       fetch("https://formsubmit.co/ajax/christopher_rol@hotmail.es", {
