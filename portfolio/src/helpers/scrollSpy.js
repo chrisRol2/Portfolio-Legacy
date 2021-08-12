@@ -7,6 +7,7 @@ const scrollSpy = () => {
     entries.forEach((entry) => {
       const id = entry.target.getAttribute("id");
       if (!entry.isIntersecting) {
+        // console.log(`a[href="#${id}"]`);
         d.querySelector(`a[href="#${id}"]`).classList.remove("active");
       }
     });
@@ -42,7 +43,7 @@ export const firstLoad = () => {
   return { $title__component, observer };
 };
 
-export const unObserver = ({objectOberved, observer}) => {
+export const unObserver = ({ objectOberved, observer }) => {
   // objectOberved.forEach((e) => observer.unobserve(e));
   console.log("desmontado");
 };
