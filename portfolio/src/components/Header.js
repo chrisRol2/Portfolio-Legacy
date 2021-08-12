@@ -36,7 +36,7 @@ const Header = () => {
   }, [name]);
 
   const handleHover = () => {
-    if (matchMedia("(min-width: 1024px)").matches) {
+    if (matchMedia("(min-width: 1008px)").matches) {
       /* La pantalla tiene al menos 1024 píxeles de ancho */
       if (isHovered) {
         setAnimationClass(initialHover);
@@ -68,7 +68,7 @@ const Header = () => {
           {/* <h2>FrontEnd Developer</h2> */}
         </div>
       </div>
-      {mediaMatch && <NavBar/>}
+      {<NavBar />}
     </>
   );
 };
