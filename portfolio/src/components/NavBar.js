@@ -47,6 +47,14 @@ export class NavBar extends Component {
             About
           </a>
           <a
+            href="#Techno"
+            name="Techno"
+            className={"nav__link animate__animated " + this.state.Techno}
+            onClick={this.onClick}
+          >
+            Tools
+          </a>
+          <a
             href="#projects"
             name="Projects"
             className={"nav__link animate__animated " + this.state.Projects}
