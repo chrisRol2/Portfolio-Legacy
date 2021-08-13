@@ -54,7 +54,7 @@ const ContactMe = () => {
 
   const post = () => {
     let errorFlag = false;
-    let errorName = name.split(" ").length > 1 && nameExpression.test(name);
+    let errorName = name.split(" ").length >= 1 && nameExpression.test(name);
     let errorMail = emailExpression.test(email);
     let errorText = text.split(" ").length > 15 && textExpression.test(text);
     if (!errorName) errorFlag = true;
@@ -66,7 +66,7 @@ const ContactMe = () => {
         error: null,
       });
 
-      fetch("https://formsubmit.cos/ajax/christopher_rol@hotmail.es", {
+      fetch("https://formsubmit.co/ajax/christopher_rol@hotmail.es", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
