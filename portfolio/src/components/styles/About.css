@@ -9,6 +9,8 @@
   /* padding: 40px; */
   border-radius: 30px;
   border: 4px solid #121111;
+  font-family: "Staatliches", cursive;
+
   /* border-bottom: 6px solid #121111;
     border-right: 6px solid #121111; */
 }
@@ -21,14 +23,13 @@
 }
 
 #image {
-  background: url(../../images/images.png);
+  /* background: url(../../images/images.png); */
   max-height: 100%;
   max-width: 100%;
   margin: auto;
-  border-radius: 30px;
+  margin-top: 5%;
+  border-radius: 50%;
   border: 4px solid #121111;
-  border-bottom: 6px solid #121111;
-  border-right: 6px solid #121111;
   overflow: auto;
 }
 
@@ -37,10 +38,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 #aboutMe__about-container h2 {
   font-size: 30px;
 }
 #aboutMe__about-container p {
   font-size: 20px;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#aboutMe__about-container h2:first-child {
+  margin-top: 15px;
+  font-size: 60px;
+}
+@media screen and (max-width: 550px) {
+  #aboutMe__about-container h2:first-child {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 430px) {
+  #aboutMe__about-container h2:first-child {
+    font-size: 40px;
+    text-align: center;
+  }
+  #image {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }

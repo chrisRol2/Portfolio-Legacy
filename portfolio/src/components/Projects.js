@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Project from "./Project";
 import "./styles/Projects.css";
-import Works from "../API/works.json";
+import { Works } from "../API/works.json";
 export class Projects extends Component {
   render() {
     return (

@@ -8,7 +8,7 @@
   border: 4px solid #121111;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   /* background: url(../../images/fotin.png); */
 
   overflow: auto;
@@ -46,4 +46,10 @@
   flex-direction: column;
   flex-grow: 1;
   background: #807f9160;
+}
+
+@media screen and (max-width: 720px) {
+  .project_N {
+    min-width: calc(70% + 20px * 2);
+  }
 }
