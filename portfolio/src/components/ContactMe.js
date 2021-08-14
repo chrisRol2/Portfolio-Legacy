@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import ErrorContext from "../context/ErrorContext";
+import LanguageContext from "../context/LanguageContext";
 import "./styles/ContactMe.css";
 const idleStyles = {
   style: {
@@ -34,6 +35,7 @@ const ContactMe = () => {
   const [email, setEmail] = useState(null);
   const [text, setText] = useState("");
   const [errorStyle, setErrorStyle] = useState(styleForm);
+  const { text: lang } = useContext(LanguageContext);
   const { error, setError } = useContext(ErrorContext);
   const emailExpression =
     /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,63}$/i;
@@ -126,11 +128,11 @@ const ContactMe = () => {
   return (
     <div id="contact" scrollspy="true">
       <div className="title__component" id="contact__Title">
-        <h2>Contact Me</h2>
+        <h2>{lang.contactMe}</h2>
       </div>
       <div id="contact__div">
         <div className="form__input__div">
-          <label htmlFor="name-email">Name</label>
+          <label htmlFor="name-email">{lang.name}</label>
           <input
             style={errorStyle.name.style}
             className={errorStyle.name.class}
@@ -138,7 +140,7 @@ const ContactMe = () => {
               setName(e.target.value);
               handleChange(e);
             }}
-            placeholder="Name"
+            placeholder={lang.name}
             type="text"
             name="nameEMail"
             id="name-email"
@@ -161,7 +163,7 @@ const ContactMe = () => {
           />
         </div>
         <div className="form__input__div">
-          <label htmlFor="text-email">Message</label>
+          <label htmlFor="text-email">{lang.message}</label>
 
           <textarea
             onChange={(e) => {
@@ -178,7 +180,7 @@ const ContactMe = () => {
         </div>
         <input
           type="button"
-          value="Send"
+          value={lang.send}
           id="form__sendButton"
           onClick={post}
         />

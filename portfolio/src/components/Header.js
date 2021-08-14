@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import LanguageContext from "../context/LanguageContext";
 import MediaContext from "../context/MediaQueryContext";
 import NavBar from "./NavBar";
 import "./styles/Header.css";
@@ -20,6 +21,7 @@ const nameLong = {
 };
 const Header = () => {
   const { mediaMatch } = useContext(MediaContext);
+  const { text } = useContext(LanguageContext);
 
   const [isHovered, setIsHovered] = useState(false);
   const [name, setName] = useState(nameLong.small);
@@ -43,7 +45,7 @@ const Header = () => {
         setTitleName(name);
       } else {
         setAnimationClass(endHover);
-        setTitleName("FrontEnd Developer");
+        setTitleName(text.frontenDev);
       }
       setIsHovered(!isHovered);
     } else {
@@ -55,7 +57,7 @@ const Header = () => {
     <>
       <div id="header" scrollspy="false">
         <div className="animate__animated animate__zoomInDown">
-          <h2>Hello, i am</h2>
+          <h2>{text.hi}</h2>
           <div>
             <h1
               style={animationClass}

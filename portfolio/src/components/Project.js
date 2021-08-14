@@ -1,80 +1,57 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
+import LanguageContext from "../context/LanguageContext";
 import "./styles/Project.css";
 const unhovered = {
   display: "flex",
   opacity: "0",
 };
-const hovered = {
+const hoveredS = {
   display: "flex",
-  // opacity: "0.50",
   background: "#807f9160",
 };
 
-export class Project extends Component {
-  state = {
-    hovered: false,
-    hoverStyle: unhovered,
-  };
+export const Project = (props) => {
+  const { text } = useContext(LanguageContext);
+  const [hoverStyle, setHoverStyle] = useState(unhovered);
+  const [animate, setAnimate] = useState("");
 
-  onHover = () => {
-    setTimeout(() => {
-      this.setState({
-        hovered: true,
-        hoverStyle: hovered,
-      });
-    }, 50);
-  };
-  unHover = () => {
-    setTimeout(() => {
-      this.setState({
-        hovered: false,
-        hoverStyle: unhovered,
-      });
-    }, 100);
-  };
+  const onHover = () => setTimeout(() => setHoverStyle(hoveredS), 50);
 
-  onClick = (e) => {
-    this.setState({
-      animate: "animate__animated animate__heartBeat",
-    });
+  const unHover = () => setTimeout(() => setHoverStyle(unhovered), 100);
+
+  const onClick = () => {
+    setAnimate("animate__animated animate__heartBeat");
     setTimeout(() => {
-      this.setState({ animate: "" });
+      setAnimate("");
     }, 500);
   };
 
-  render() {
-    // console.log(img);
-    return (
-      <div
-        className="project_N"
-        onMouseEnter={this.onHover}
-        onMouseLeave={this.unHover}
-        style={{
-          background: `url(${this.props.img})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "top center",
-          backgroundSize: "cover",
-        }}
-      >
+  // console.log(img);
+  return (
+    <div
+      className="project_N"
+      onMouseEnter={onHover}
+      onMouseLeave={unHover}
+      style={{
+        background: `url(${props.img})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top center",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="project_N-hover" style={hoverStyle}>
+        <div className="project_N-name">
+          <h2>{props.name}</h2>
+        </div>
 
-        <div className="project_N-hover" style={this.state.hoverStyle}>
-          <div className="project_N-name">
-            <h2>{this.props.name}</h2>
-          </div>
-
-          <div className="project_N-link">
-            <button
-              className={this.state.animate}
-              onClick={this.onClick}
-              name="proyecto1"
-            >
-              Visit {this.props.name}
-            </button>
-          </div>
+        <div className="project_N-link">
+          <button className={animate} onClick={onClick} name="proyecto1">
+            {text.visit} {props.name}
+          </button>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Project;

@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
+import LanguageContext from "../context/LanguageContext";
 import Project from "./Project";
 import "./styles/Projects.css";
 import { Works } from "../API/works.json";
@@ -9,13 +10,14 @@ import images from "../images/images.png";
 
 const imgs = [img, fondo, profile, images];
 
-export class Projects extends Component {
-  render() {
+export const Projects =()=>{
+const { text } = useContext(LanguageContext);
+ 
     // console.log(img);
     return (
       <div id="projects" scrollspy="true">
         <div className="title__component" id="project__title">
-          <h2>My Works</h2>
+          <h2>{text.my} {text.works}</h2>
         </div>
         <div id="project__div">
           {Works.map((work, idex) => {
@@ -24,7 +26,7 @@ export class Projects extends Component {
         </div>
       </div>
     );
-  }
+  
 }
 
 export default Projects;
