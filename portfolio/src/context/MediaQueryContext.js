@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 const MediaContext = createContext();
 
@@ -11,6 +11,12 @@ const MediaProvider = ({ children }) => {
   matchMediaEvent.addEventListener("change", () => {
     setResolution(window.innerWidth);
     setMediaMatch(matchMediaEvent.matches);
+  });
+
+  useEffect(() => {
+    return () => {
+      // matchMediaEvent.removeEventListener("change");
+    };
   });
 
   const data = {
