@@ -1,5 +1,5 @@
 #contact__div {
-  height: calc(60vh - 20px - (120px + 40px));
+  min-height: calc(60vh - 20px - (120px + 40px));
   width: calc(100% - (40 * 2) - 20px * 2);
 
   display: flex;
