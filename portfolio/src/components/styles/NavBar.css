@@ -4,8 +4,10 @@
   margin: 15px;
   margin-bottom: 30px;
   border-radius: 30px;
+  /* position: absolute; */
   position: sticky;
-  top: 15px;
+  top: 5px;
+  /* background-color: red; */
   background-color: #fbf8ee;
   display: flex;
   justify-content: space-evenly;
@@ -15,6 +17,8 @@
   border: 2px solid #121111;
   border-bottom: 6px solid #121111;
   border-right: 6px solid #121111;
+
+  scroll-margin-top: 5px;
 }
 #navbar > a,
 .nav__link {
@@ -51,6 +55,7 @@
   transition: border-bottom, border-right, border 0.2s;
 }
 #nav__resposive {
+  /* scroll-padding-top: 50px; */
   display: none;
 }
 #nav__resposive div {
@@ -68,8 +73,8 @@
 }
 @media screen and (max-width: 720px) {
   #navbar {
-    top: 5px;
-    margin-bottom: 20px;
+    /* top: 5px; */
+    margin-bottom: 0px;
     height: 80px;
     border-bottom-width: 4px;
     border-right-width: 4px;
