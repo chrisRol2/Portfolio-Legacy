@@ -11,7 +11,12 @@ html {
 * {
   font-family: "Staatliches", cursive;
 }
-
+img {
+  pointer-events: none;
+}
+svg {
+  pointer-events: none;
+}
 :root {
   --button-acent: #ffbb00;
   --acent: #fbf8ee;
