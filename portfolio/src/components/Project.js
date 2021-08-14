@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./styles/Project.css";
-
 const unhovered = {
   display: "flex",
   opacity: "0",
@@ -44,17 +43,21 @@ export class Project extends Component {
   };
 
   render() {
+    // console.log(img);
     return (
       <div
         className="project_N"
         onMouseEnter={this.onHover}
         onMouseLeave={this.unHover}
+        style={{
+          background: `url(${this.props.img})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "top center",
+          backgroundSize: "cover",
+        }}
       >
-        <div className="project_N-hover" style={this.state.hoverStyle}>
-          <div className="project_N-image">
-            <img src={this.props.img} alt={this.props.alt} />
-          </div>
 
+        <div className="project_N-hover" style={this.state.hoverStyle}>
           <div className="project_N-name">
             <h2>{this.props.name}</h2>
           </div>
