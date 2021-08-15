@@ -112,13 +112,22 @@ const ContactMe = () => {
             : idleStyles,
         });
       }, 1000);
-      setError({ errorForm: "invalid email" });
+      if (!errorName) {
+        console.log("error: ", errorName);
+      }
+      if (!errorMail) {
+        console.log("error: ", errorMail);
+      }
+      if (!errorText) {
+        console.log("error: ", errorText);
+      }
+      setError({ errorForm: "invalid data" });
       return;
     }
   };
 
   useEffect(() => {
-    if (error.errorForm === "invalid email") {
+    if (error.errorForm === "invalid data") {
     } else if (error.errorForm === "Fail to send email") {
     } else if (error.errorForm === "connection error") {
     } else if (error.errorForm === "ok") {
