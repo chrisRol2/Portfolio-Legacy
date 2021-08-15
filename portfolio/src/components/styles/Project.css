@@ -1,7 +1,7 @@
 .project_N {
   background: #e1e0ff;
   min-width: calc(40% + 20px * 2);
-  height: calc(210px + 20px * 2);
+  height: calc(300px + 20px * 2);
   margin: 20px;
   /* padding: 40px; */
   border-radius: 30px;
@@ -10,7 +10,6 @@
   flex-direction: column;
   /* flex-grow: 1; */
   /* background-image: url(./rolgusCom.png); */
-
 
   overflow: auto;
 }
@@ -51,7 +50,7 @@
   background: #807f9160;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 847px) {
   .project_N {
     min-width: calc(70% + 20px * 2);
   }
