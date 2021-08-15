@@ -3,13 +3,16 @@ import "./styles/NavBar.css";
 import "./styles/animate.min.css";
 import scrollSpy from "../helpers/scrollSpy";
 import "./styles/hamburgers.css";
-import Menu from "./Menu";
+import Menu, { MenuDesktop } from "./Menu";
 import LanguageContext from "../context/LanguageContext";
+// import MediaContext from "../context/MediaQueryContext";
 
 export const NavBar = () => {
-    const { text } = useContext(LanguageContext);
+  const { text } = useContext(LanguageContext);
+  // const { resolution } = useContext(MediaContext);
   const [menu, setMenu] = useState(false);
   const [home, setHome] = useState(null);
+  const [resolution, setResolution] = useState(window.outerWidth);
   const [about, setAbout] = useState(null);
   const [techno, setTechno] = useState(null);
   const [projects, setProjects] = useState(null);
@@ -46,6 +49,7 @@ export const NavBar = () => {
   };
 
   const handleMenuClick = () => {
+    setResolution(window.innerWidth);
     let menuOpen = !menu;
     setMenu(menuOpen);
     body.style.overflow = `${menuOpen ? "hidden" : "visible"}`;
@@ -59,12 +63,18 @@ export const NavBar = () => {
 
   return (
     <>
-      {
+      {resolution <= 720 ? (
         <Menu
           onClick={handleMenuClick}
           style={menu ? { transform: "scale(1)" } : { transform: "scale(0)" }}
         />
-      }
+      ) : (
+        <MenuDesktop
+          onClick={handleMenuClick}
+          style={menu ? { transform: "scale(1)" } : { transform: "scale(0)" }}
+        />
+      )}
+
       <nav id="navbar">
         <>
           <a
