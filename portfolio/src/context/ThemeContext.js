@@ -15,7 +15,7 @@ const light = {
 };
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   const data = {
     theme,
