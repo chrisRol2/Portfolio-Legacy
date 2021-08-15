@@ -29,11 +29,15 @@ const styleForm = {
   name: idleStyles,
   text: idleStyles,
 };
-
+let errorFlag;
+let errorName;
+let errorMail;
+let errorText;
 const ContactMe = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState(null);
   const [text, setText] = useState("");
+
   const [errorStyle, setErrorStyle] = useState(styleForm);
   const { text: lang } = useContext(LanguageContext);
   const { error, setError } = useContext(ErrorContext);
@@ -55,10 +59,10 @@ const ContactMe = () => {
   };
 
   const post = () => {
-    let errorFlag = false;
-    let errorName = name.split(" ").length >= 1 && nameExpression.test(name);
-    let errorMail = emailExpression.test(email);
-    let errorText = text.split(" ").length > 15 && textExpression.test(text);
+    errorFlag = false;
+    errorName = name.split(" ").length >= 1 && nameExpression.test(name);
+    errorMail = emailExpression.test(email);
+    errorText = text.split(" ").length > 5 && textExpression.test(text);
     if (!errorName) errorFlag = true;
     if (!errorMail) errorFlag = true;
     if (!errorText) errorFlag = true;
@@ -112,6 +116,14 @@ const ContactMe = () => {
             : idleStyles,
         });
       }, 1000);
+
+      setError({ errorForm: "invalid data" });
+      return;
+    }
+  };
+
+  useEffect(() => {
+    if (error.errorForm === "invalid data") {
       if (!errorName) {
         console.log("error: ", errorName);
       }
@@ -121,13 +133,6 @@ const ContactMe = () => {
       if (!errorText) {
         console.log("error: ", errorText);
       }
-      setError({ errorForm: "invalid data" });
-      return;
-    }
-  };
-
-  useEffect(() => {
-    if (error.errorForm === "invalid data") {
     } else if (error.errorForm === "Fail to send email") {
     } else if (error.errorForm === "connection error") {
     } else if (error.errorForm === "ok") {
@@ -140,6 +145,7 @@ const ContactMe = () => {
         <h2>{lang.contactMe}</h2>
       </div>
       <div id="contact__div">
+        {/* <div id="modal__error">.</div> */}
         <div className="form__input__div">
           <label htmlFor="name-email">{lang.name}</label>
           <input
