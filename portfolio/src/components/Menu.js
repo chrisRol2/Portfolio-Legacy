@@ -3,14 +3,14 @@ import LanguageContext from "../context/LanguageContext";
 import "./styles/Menu.css";
 import esImg from "../images/spain.png";
 import enImg from "../images/usa.png";
-import ThemeContext from "../context/ThemeContext";
+// import ThemeContext from "../context/ThemeContext";
 function Menu(props) {
   const { lang, setLang, text } = useContext(LanguageContext);
-  const { theme, setTheme } = useContext(ThemeContext); //themeStyles
+  // const { theme, setTheme } = useContext(ThemeContext); //themeStyles
   const handleLanguage = () => setLang(lang === "en" ? "es" : "en");
   const handletheme = (e) => {
-    console.log(e.target.checked);
-    setTheme(e.target.checked ? "light" : "dark");
+    // console.log(e.target.checked);
+    // setTheme(e.target.checked ? "light" : "dark");
   };
   return (
     <div id="menu" style={props.style}>
