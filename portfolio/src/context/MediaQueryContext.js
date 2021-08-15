@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext } from "react";
 
 const MediaContext = createContext();
 
@@ -6,18 +6,16 @@ const MediaProvider = ({ children }) => {
   const matchMediaEvent = matchMedia("(min-width: 518px)");
 
   const [mediaMatch, setMediaMatch] = useState(matchMediaEvent.matches);
-  const [resolution, setResolution] = useState(1024);
+  const [resolution, setResolution] = useState(null);
 
   matchMediaEvent.addEventListener("change", () => {
-    setResolution(window.innerWidth);
+    setResolution(window.outerWidth);
     setMediaMatch(matchMediaEvent.matches);
   });
 
-  useEffect(() => {
-    return () => {
-      // matchMediaEvent.removeEventListener("change");
-    };
-  });
+  // useEffect(() => {
+  //   setResolution(window.outerWidth);
+  // }, [window.outerWidth]);
 
   const data = {
     mediaMatch: mediaMatch,

@@ -14,7 +14,7 @@ const scrollSpy = () => {
   };
 
   const observer = new IntersectionObserver(cb, {
-    threshold: 0.7,
+    threshold: 0.3,
   });
   $navSpy.forEach((e) => observer.observe(e));
   return { $navSpy, observer };

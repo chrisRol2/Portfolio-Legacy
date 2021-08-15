@@ -72,7 +72,7 @@
   opacity: 0.8;
 }
 @media screen and (max-width: 720px) {
-  #navbar {
+  #navbar { 
     /* top: 5px; */
     margin-bottom: 0px;
     height: 80px;
