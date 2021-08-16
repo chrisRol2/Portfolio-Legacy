@@ -50,20 +50,42 @@ export const NavBar = () => {
 
   const handleMenuClick = () => {
     setResolution(window.innerWidth);
+    
     let menuOpen = !menu;
     setMenu(menuOpen);
-    body.style.overflow = `${menuOpen ? "hidden" : "visible"}`;
+    if (window.innerWidth <= 790) {
+      body.style.overflow = `${menuOpen ? "hidden" : "visible"}`;
+    }
     const element = document.getElementById("navbar");
     element.scrollIntoView();
   };
+  let prevScroll = 0;
+  
+  let actScroll ;
+  body.onscroll = () => {
+    if (!(window.innerWidth < 790)) {
+      actScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (!(actScroll > prevScroll)) {
+        if (menu) setMenu(false);
+        body.style.overflow = "visible";
 
+        // handleMenuClick();
+      }
+
+      prevScroll = actScroll <= 0 ? 0 : actScroll;
+      // console.log("scroll",window.scrollY,"pos",  window.innerHeight * .75 + 14);
+      if (window.scrollY > window.innerHeight * .75 + 15) {
+        if (menu) setMenu(false);
+        body.style.overflow = "visible";
+      }
+    }
+  }
   useEffect(() => {
     scrollSpy();
   }, []);
-
   return (
     <>
-      {resolution <= 720 ? (
+      {resolution <= 790 ? (
         <Menu
           onClick={handleMenuClick}
           style={menu ? { transform: "scale(1)" } : { transform: "scale(0)" }}
@@ -76,7 +98,7 @@ export const NavBar = () => {
       )}
 
       <nav id="navbar">
-        <>
+        
           <a
             href="#header"
             name="Home"
@@ -120,9 +142,9 @@ export const NavBar = () => {
           >
             {text.contact}
           </a>
-          <div id="nav__resposive">
-            <div></div>
-            <a href="#header">Christopher</a>
+          
+        <div id="div__fantasma"></div>
+            <a href="#header" id="header__name">Christopher</a>
             <button
               onClick={handleMenuClick}
               className={`hamburger hamburger--spring ${
@@ -134,8 +156,8 @@ export const NavBar = () => {
                 <span className="hamburger-inner"></span>
               </span>
             </button>
-          </div>
-        </>
+          
+        
       </nav>
     </>
   );

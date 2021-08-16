@@ -17,11 +17,10 @@
   border: 2px solid #121111;
   border-bottom: 6px solid #121111;
   border-right: 6px solid #121111;
-
   scroll-margin-top: 5px;
 }
-#navbar > a,
-.nav__link {
+
+#navbar>a, .nav__link {
   cursor: pointer;
   text-decoration: none;
   font-size: 30px;
@@ -34,6 +33,7 @@
   border-radius: 20px;
   transition: border-bottom, border-right, border 0.2s;
 }
+
 .active {
   border: 2px solid #121111 !important;
   border-bottom: 4px solid #121111 !important;
@@ -41,7 +41,7 @@
   border-radius: 20px;
 }
 
-#nav__resposive > a {
+#nav__resposive>.nav__link {
   cursor: pointer;
   text-decoration: none;
   font-size: 30px;
@@ -54,39 +54,60 @@
   border-radius: 20px;
   transition: border-bottom, border-right, border 0.2s;
 }
+
 #nav__resposive {
   /* scroll-padding-top: 50px; */
   display: none;
 }
+
 #nav__resposive div {
   height: 60px;
   width: 70px;
 }
-#nav__resposive .hamburger-inner,
-#nav__resposive .hamburger-inner::after,
-#nav__resposive .hamburger-inner::before {
+
+#nav__resposive .hamburger-inner, #nav__resposive .hamburger-inner::after, #nav__resposive .hamburger-inner::before {
   background-color: #121111;
   height: 5px;
 }
+
 #nav__resposive .hamburger:hover {
   opacity: 0.8;
 }
-@media screen and (max-width: 720px) {
-  #navbar { 
+
+#header__name {
+  display: none;
+}
+
+#div__fantasma {
+  display: none;
+   height: 60px;
+  width: 70px;
+}
+
+@media screen and (max-width: 790px) {
+  #navbar {
     /* top: 5px; */
     margin-bottom: 0px;
     height: 80px;
     border-bottom-width: 4px;
     border-right-width: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  #navbar > a {
+  #navbar>.nav__link {
     display: none;
   }
-
+  #header__name {
+    display: block;
+  }
   #nav__resposive {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+  }
+  #div__fantasma {
+    display: block;
   }
 }
