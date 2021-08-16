@@ -4,7 +4,7 @@
     "frontenDev": "FrontEnd Developer",
     "my": "Mis",
     "home": "Inicio",
-    "about": "Sobre Mi",
+    "about": "Acerca",
     "tools": "Herramientas",
     "works": "Projectos",
     "contact": "Contacto",
@@ -13,6 +13,9 @@
     "message": "Mensaje",
     "send": "Enviar",
     "visit":"Visitar",
+    "messageError":"El mensaje debe tener al menos 6 palabras",
+    "nameError":"No hay nombre",
+    "emailError":"Debe ser EMail valido",
     "description": "Inicie mi camino en el desarrollo hace 7 años, estuve en proyectos de IOT y fui lider en un  equipo de robotica, durante la cuarentena aproveche mi tiempo para empaparme del mundo del desarrollo web, y empece la aventura de mi vida, convertirme en desarrollador FullStack, con una hoja de ruta moderna, actualmente utilizo ReactJs y JavaScript vanilla para llevar a cabo mis proyectos. Nacido en Buenos Aires, pero habitante del planeta tierra. Creyente del trabajo en equipo, de ser autodidacta y de que todo es posible con esfuerzo y amor. Desarrollador como estilo de vida"
   },
   "en": {
@@ -30,6 +33,9 @@
     "message": "Message",
     "send": "Send",
     "visit": "Visit",
+    "messageError": "The message must be at least 6 words",
+    "nameError": "Enter name pease",
+    "emailError": "Must be valid email",
     "description": "I started my road in development 7 years ago, I was in IOT projects and I was a leader in a robotics team, during the quarantine I took advantage of my time to soak up the world of web development, and I began the adventure of my life, becoming a FullStack developer , with a modern roadmap, I currently use ReactJs and vanilla JavaScript to carry out my projects. Born in Buenos Aires, but an inhabitant of planet earth. Believer of teamwork, of being a learned person and that everything is possible with effort and love. Developer as a lifestyle"
   }
 }
