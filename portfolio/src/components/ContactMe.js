@@ -19,10 +19,13 @@ const errorStyles = {
   classArea:
     "form__input-textarea animate__animated animate__shakeX form__input",
 };
-// const sentStyles = {
-//   style: {},
-//   class: "form__input",
-// };
+const sentStyles = {
+  style: {
+    borderColor:"rgb(41, 255, 77)",
+  },
+  class: "form__input",
+  classArea: "form__input-textarea",
+};
 
 const styleForm = {
   email: idleStyles,
@@ -34,16 +37,16 @@ let errorName;
 let errorMail;
 let errorText;
 const ContactMe = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState(null);
-  const [text, setText] = useState("");
+  const [name,   setName] = useState("");
+  const [email,  setEmail] = useState("");
+  const [text,   setText] = useState("");
 
   const [errorStyle, setErrorStyle] = useState(styleForm);
   const { text: lang } = useContext(LanguageContext);
   const { error, setError } = useContext(ErrorContext);
   const emailExpression =
     /^(?:[^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*|"[^\n"]+")@(?:[^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,63}$/i;
-  const nameExpression = /[A-Z-a-z-À-ÿ] /;
+  const nameExpression = /[A-Z-a-z-À-ÿ]/;
 
   const textExpression = /[A-Z-a-z-À-ÿ] /;
   const handleChange = (e) => {
@@ -60,7 +63,7 @@ const ContactMe = () => {
 
   const post = () => {
     errorFlag = false;
-    errorName = name.split(" ").length > 0 && nameExpression.test(name);
+    errorName =  nameExpression.test(name) && name.length > 1;
     errorMail = emailExpression.test(email);
     errorText = text.split(" ").length > 5 && textExpression.test(text);
     if (!errorName) errorFlag = true;
@@ -134,8 +137,19 @@ const ContactMe = () => {
         console.log("error: ", "errorText");
       }
     } else if (error.errorForm === "Fail to send email") {
+      alert("Error to send email")
     } else if (error.errorForm === "connection error") {
+      alert("Conection error")
     } else if (error.errorForm === "ok") {
+      console.log("clear");
+      setErrorStyle({
+        name:  sentStyles,
+        email: sentStyles,
+        text:  sentStyles,
+      })
+      setName("");
+      setEmail("");
+      setText("");
     }
   }, [error]);
 
@@ -155,6 +169,7 @@ const ContactMe = () => {
               setName(e.target.value);
               handleChange(e);
             }}
+            value={name}
             placeholder={lang.name}
             type="text"
             name="nameEMail"
@@ -171,6 +186,7 @@ const ContactMe = () => {
             type="email"
             name="emailEMail"
             id="email-email"
+            value={email}
             onChange={(e) => {
               setEmail(e.target.value);
               handleChange(e);
@@ -190,6 +206,7 @@ const ContactMe = () => {
             name="textEMail"
             id="text-email"
             cols="30"
+            value={text}
             rows="10"
           ></textarea>
         </div>
