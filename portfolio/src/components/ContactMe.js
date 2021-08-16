@@ -60,7 +60,7 @@ const ContactMe = () => {
 
   const post = () => {
     errorFlag = false;
-    errorName = name.split(" ").length >= 1 && nameExpression.test(name);
+    errorName = name.split(" ").length > 0 && nameExpression.test(name);
     errorMail = emailExpression.test(email);
     errorText = text.split(" ").length > 5 && textExpression.test(text);
     if (!errorName) errorFlag = true;
@@ -125,13 +125,13 @@ const ContactMe = () => {
   useEffect(() => {
     if (error.errorForm === "invalid data") {
       if (!errorName) {
-        console.log("error: ", errorName);
+        console.log("error: ", "name");
       }
       if (!errorMail) {
-        console.log("error: ", errorMail);
+        console.log("error: ", "errorMail");
       }
       if (!errorText) {
-        console.log("error: ", errorText);
+        console.log("error: ", "errorText");
       }
     } else if (error.errorForm === "Fail to send email") {
     } else if (error.errorForm === "connection error") {
