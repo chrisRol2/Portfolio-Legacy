@@ -21,7 +21,7 @@ const errorStyles = {
 };
 const sentStyles = {
   style: {
-    borderColor:"rgb(41, 255, 77)",
+    borderColor: "rgb(41, 255, 77)",
   },
   class: "form__input",
   classArea: "form__input-textarea",
@@ -37,9 +37,9 @@ let errorName;
 let errorMail;
 let errorText;
 const ContactMe = () => {
-  const [name,   setName] = useState("");
-  const [email,  setEmail] = useState("");
-  const [text,   setText] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
 
   const [errorStyle, setErrorStyle] = useState(styleForm);
   const { text: lang } = useContext(LanguageContext);
@@ -63,7 +63,7 @@ const ContactMe = () => {
 
   const post = () => {
     errorFlag = false;
-    errorName =  nameExpression.test(name) && name.length > 1;
+    errorName = nameExpression.test(name) && name.length > 1;
     errorMail = emailExpression.test(email);
     errorText = text.split(" ").length > 5 && textExpression.test(text);
     if (!errorName) errorFlag = true;
@@ -137,16 +137,16 @@ const ContactMe = () => {
         console.log("error: ", "errorText");
       }
     } else if (error.errorForm === "Fail to send email") {
-      alert("Error to send email")
+      alert("Error to send email");
     } else if (error.errorForm === "connection error") {
-      alert("Conection error")
+      alert("Conection error");
     } else if (error.errorForm === "ok") {
       console.log("clear");
       setErrorStyle({
-        name:  sentStyles,
+        name: sentStyles,
         email: sentStyles,
-        text:  sentStyles,
-      })
+        text: sentStyles,
+      });
       setName("");
       setEmail("");
       setText("");
@@ -155,10 +155,10 @@ const ContactMe = () => {
 
   return (
     <div id="contact" scrollspy="true">
-      <div className="title__component" id="contact__Title">
+      <div className="title__component  headline" id="contact__Title">
         <h2>{lang.contactMe}</h2>
       </div>
-      <div id="contact__div">
+      <div id="contact__div" className="headline">
         {/* <div id="modal__error">.</div> */}
         <div className="form__input__div">
           <label htmlFor="name-email">{lang.name}</label>

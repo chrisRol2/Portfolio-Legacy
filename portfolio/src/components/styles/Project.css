@@ -46,10 +46,23 @@
   border-radius: 25px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  align-content: center;
+  justify-content: center;
+  /* flex-grow: 1; */
   background: #807f9160;
 }
-
+.project_N-link button {
+  height: 15px;
+  padding: 15px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #121111;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 847px) {
   .project_N {
     min-width: calc(70% + 20px * 2);

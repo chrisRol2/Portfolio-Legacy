@@ -8,12 +8,12 @@ function Techno() {
 
   return (
     <div id="Techno" scrollspy="true">
-      <div className="title__component" id="techno__Title">
+      <div className="title__component headline" id="techno__Title">
         <h2>
           {text.my} {text.tools}
         </h2>
       </div>
-      <div id="Techno__div">
+      <div id="Techno__div" className="headline">
         {tecno.map((e) => {
           return <h2 key={e.id}>{e.name}</h2>;
         })}

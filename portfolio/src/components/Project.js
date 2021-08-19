@@ -21,6 +21,7 @@ export const Project = (props) => {
 
   const onClick = () => {
     setAnimate("animate__animated animate__heartBeat");
+    window.open(props.link, "bac");
     setTimeout(() => {
       setAnimate("");
     }, 500);
@@ -46,7 +47,9 @@ export const Project = (props) => {
 
         <div className="project_N-link">
           <button className={animate} onClick={onClick} name="proyecto1">
-            {text.visit} {props.name}
+            <span>
+              {text.visit} {props.name}
+            </span>
           </button>
         </div>
       </div>
