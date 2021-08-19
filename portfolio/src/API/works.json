@@ -1,77 +1,80 @@
 {
-    "Works": [
-        {
-            "id": 1,
-            "name": "Rolgus ToolBox",
-            "description": "ToolBox for minecraft players, calculators and more",
-            "img": "imagen",
-            "alt": "Alt img"
-        },
-        {
-            "id": 2,
-            "name": "Discord Bot",
-            "description": "A robot to have fun in discord with friends",
-            "img": "imagen",
-            "alt": "Alt img"
-        },
-        {
-            "id": 3,
-            "name": "Portfolio",
-            "description": "My personal Portfolio, oh this is page 😍",
-            "img": "imagen",
-            "alt": "Alt img"
-        },
-        {
-            "id": 4,
-            "name": "LoT-TiDo",
-            "description": "My personal Portfolio, oh this is page 😍",
-            "img": "imagen",
-            "alt": "Alt img"
-        }
-    ],
-    "tecno": [
-        {                                                   
-            "id": 10,                           
-            "name": "React",                         
-            "img": "imagen"                         
-        },                          
-        {                           
-            "id": 11,                           
-            "name": "JavaScript",                         
-            "img": "imagen"                         
-        },                          
-        {
-            "id": 12,
-            "name": "HTML 5",
-            "img": "imagen"
-        },
-        {
-            "id": 13,
-            "name": "CSS 3",
-            "img": "imagen"
-        },
-        {
-            "id": 14,
-            "name": "Node",
-            "img": "imagen"
-        }       
-    ],
-    "tools":[
-        {
-            "id": 15,
-            "name": "Git/GitHub",
-            "img": "imagen"
-        },
-        {
-            "id": 16,
-            "name": "Figma",
-            "img": "imagen"
-        },
-        {
-            "id": 17,
-            "name": "Docker",
-            "img": "imagen"
-        }
-    ]
-
+  "Works": [
+    {
+      "id": 1,
+      "name": "Rolgus ToolBox",
+      "description": "ToolBox for minecraft players, calculators and more",
+      "img": "imagen",
+      "alt": "Alt img",
+      "link": "https://rolgus.com"
+    },
+    {
+      "id": 2,
+      "name": "Agencia Luma",
+      "description": "Landing page",
+      "img": "imagen",
+      "alt": "Alt img",
+      "link": "https://AgenciaLuma.com.ar"
+    },
+    {
+      "id": 3,
+      "name": "Portfolio",
+      "description": "My personal Portfolio, oh this is page 😍",
+      "img": "imagen",
+      "alt": "Alt img",
+      "link": "http://me.rolgus.com"
+    },
+    {
+      "id": 4,
+      "name": "LoT-TiDo",
+      "description": "My personal Portfolio, oh this is page 😍",
+      "img": "imagen",
+      "alt": "Alt img",
+      "link": "http://me.rolgus.com"
+    }
+  ],
+  "tecno": [
+    {
+      "id": 10,
+      "name": "React",
+      "img": "imagen"
+    },
+    {
+      "id": 11,
+      "name": "JavaScript",
+      "img": "imagen"
+    },
+    {
+      "id": 12,
+      "name": "HTML 5",
+      "img": "imagen"
+    },
+    {
+      "id": 13,
+      "name": "CSS 3",
+      "img": "imagen"
+    },
+    {
+      "id": 14,
+      "name": "Node",
+      "img": "imagen"
+    }
+  ],
+  "tools": [
+    {
+      "id": 15,
+      "name": "Git/GitHub",
+      "img": "imagen"
+    },
+    {
+      "id": 16,
+      "name": "Figma",
+      "img": "imagen"
+    },
+    {
+      "id": 17,
+      "name": "Docker",
+      "img": "imagen"
+    }
+  ]
 }
