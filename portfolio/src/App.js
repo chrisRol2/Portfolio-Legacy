@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -9,9 +9,12 @@ import { ErrorProvider } from "./context/ErrorContext";
 import Techno from "./components/Techno";
 import { LangProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
-
+import ScrollReveal from "scrollreveal";
 // animate__backInUp
 const App = () => {
+  useEffect(() => {
+    ScrollReveal().reveal(".headline");
+  });
   return (
     <div>
       <ThemeProvider>
